@@ -10,8 +10,8 @@ import solution
 
 if __name__ == '__main__':
 	# Get list of possible solutions
-	allWordsFile = 'all-words.txt'
-	solWordsFile = 'words.txt'
+	allWordsFile = 'word_lists/all-words.txt'
+	solWordsFile = 'word_lists/words.txt'
 
 	allWords = stats.getWordList(allWordsFile)
 	solWords = stats.getWordList(solWordsFile)
