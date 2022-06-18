@@ -21,10 +21,15 @@ def today():
 	spans = soup.find_all('span', {'class' : 'answer'})
 	answer = spans[0].get_text().strip().lower()
 
-	return answer
+	h2 = soup.find_all('h2', {'class': 'subheading subheading--top'})
+	x, y = h2[0].get_text().strip().lower().split('#')
+	gameId, _ = y.split(')')
+
+	return answer, gameId
 
 def past(gameId):
 	'''
+	input: gameId (int)
 	returns the solution for a specific day specified by game ID
 	'''
 	answer = ""
