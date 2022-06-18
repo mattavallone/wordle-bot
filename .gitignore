@@ -3,3 +3,5 @@ __pycache__/
 allWords_allLetters.txt
 allWords_solLetters.txt
 solWords_solLetters.txt
+wordle-answer.html
+.env
