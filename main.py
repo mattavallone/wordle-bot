@@ -12,18 +12,24 @@ if __name__ == '__main__':
 	# Get list of possible solutions
 	allWordsFile = 'word_lists/all-words.txt'
 	solWordsFile = 'word_lists/words.txt'
+	pastWordsFile = 'word_lists/previous-answers.txt'
 
 	allWords = stats.getWordList(allWordsFile)
 	solWords = stats.getWordList(solWordsFile)
+	pastWords = stats.getWordList(pastWordsFile)
 
+	# Add any missing previous solutions to list
+	solution.updatePastWords(pastWords)
+
+	# Remove previously used words from solution set
+	solWords = solution.removePastWords(solWords, pastWords)
+	
 	# Compute embedding vectors for each letter and word
 	allLetters = stats.getLetterDistrubution(allWords)
 	solLetters = stats.getLetterDistrubution(solWords)
 
 	allWordsScores = stats.getWordScores(allWords, allLetters)
 	solWordScores = stats.getWordScores(solWords, solLetters)
-
-	# print(allWordsScores)
 
 	# Get today's wordle
 	answer, gameId = solution.today()
