@@ -1,5 +1,6 @@
 .idea/
 __pycache__/
+.ipynb_checkpoints
 word_lists/allWords_allLetters.txt
 word_lists/allWords_solLetters.txt
 word_lists/solWords_solLetters.txt
