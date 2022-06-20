@@ -1,5 +1,5 @@
 '''
-solution.py
+words.py
 
 Description: Gets the solution word for today or previous days
 
