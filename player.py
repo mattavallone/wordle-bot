@@ -9,6 +9,8 @@ Author: Matthew Avallone
 from enum import Enum 
 import numpy as np
 import requests
+import os
+from dotenv import load_dotenv
 
 # Enum for letter verdicts
 class LetterVerdict(Enum):
@@ -113,4 +115,7 @@ def postResults(states, gameId):
 		"content": message
 	}
 
-	requests.post("https://discord.com/api/webhooks/987568689001951252/BGny6ZSGMAR8o_ueA9wSS_NHJe_CMnkNVlSnr-iiqArUzYg7NjyEAVsTtZ3Nj3W075I1", data=payload)
+	load_dotenv()
+	WEBHOOK = os.getenv('DISCORD_WEBHOOK')
+
+	requests.post("https://discord.com/api/webhooks/" + WEBHOOK, data=payload)
