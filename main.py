@@ -6,7 +6,7 @@ Author: Matthew Avallone
 
 import stats
 import player
-import solution
+import words
 
 if __name__ == '__main__':
 	# Get list of possible solutions
@@ -19,10 +19,11 @@ if __name__ == '__main__':
 	pastWords = stats.getWordList(pastWordsFile)
 
 	# Add any missing previous solutions to list
-	solution.updatePastWords(pastWords)
+	words.updatePastWords(pastWords)
+	pastWords = stats.getWordList(pastWordsFile)
 
 	# Remove previously used words from solution set
-	solWords = solution.removePastWords(solWords, pastWords)
+	solWords = words.removePastWords(solWords, pastWords)
 	
 	# Compute embedding vectors for each letter and word
 	allLetters = stats.getLetterDistrubution(allWords)
@@ -32,7 +33,7 @@ if __name__ == '__main__':
 	solWordScores = stats.getWordScores(solWords, solLetters)
 
 	# Get today's wordle
-	answer, gameId = solution.today()
+	answer, gameId = words.today()
 	
 	# Have player solve wordle
 	states = []
