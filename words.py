@@ -51,8 +51,8 @@ def updatePastWords(pastWords):
 		answer = spans[i+1].get_text().strip().lower()
 		if len(answer) == 5 and answer not in pastWords:
 			print('New solution word missing from past answers list:', answer)
-			file.write(answer)
 			file.write("\n")
+			file.write(answer)
 
 	file.close()
 
