@@ -72,7 +72,7 @@ def getWordProbabilities(words, letterVecs, makeSorted=True):
 	wordProbs = dict.fromkeys(words)
 
 	for word in words:
-		prob = (letterVecs[word[0]][0] * letterVecs[word[1]][1] * letterVecs[word[2]][2] * letterVecs[word[3]][3] * letterVecs[word[4]][4]) / 5
+		prob = (letterVecs[word[0]][0] * letterVecs[word[1]][1] * letterVecs[word[2]][2] * letterVecs[word[3]][3] * letterVecs[word[4]][4])
 		wordProbs[word] = prob
 
 	if makeSorted:
