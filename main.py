@@ -25,13 +25,15 @@ if __name__ == '__main__':
 	# Remove previously used words from solution set
 	solWords = words.removePastWords(solWords, pastWords)
 	
-	# Compute embedding vectors for each letter and word
+	# Compute vectors for each letter
 	allLetters = stats.getLetterDistrubution(allWords)
 	solLetters = stats.getLetterDistrubution(solWords)
 
+	# Compute word scores
 	allWordsScores = stats.getWordScores(allWords, allLetters)
 	solWordScores = stats.getWordScores(solWords, solLetters)
 
+	# Compute word probabilities
 	allWordsProbs = stats.getWordProbabilities(allWords, allLetters)
 	solWordProbs = stats.getWordProbabilities(solWords, solLetters)
 
