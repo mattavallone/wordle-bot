@@ -32,6 +32,9 @@ if __name__ == '__main__':
 	allWordsScores = stats.getWordScores(allWords, allLetters)
 	solWordScores = stats.getWordScores(solWords, solLetters)
 
+	allWordsProbs = stats.getWordProbabilities(allWords, allLetters)
+	solWordProbs = stats.getWordProbabilities(solWords, solLetters)
+
 	# Get today's wordle
 	answer, gameId = words.today()
 	
@@ -39,8 +42,8 @@ if __name__ == '__main__':
 	states = []
 	guesses = []
 	for attempt in range(1, 7):
-		guess = player.computeGuess(solWordScores, attempt, guesses, states)
-		print("Guess is " + guess + ", Score is " + str(solWordScores[guess]))
+		guess = player.computeGuess(solWordProbs, attempt, guesses, states)
+		print("Guess is " + guess + ", Score is " + str(solWordProbs[guess]))
 
 		guesses.append(guess)
 

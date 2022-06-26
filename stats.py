@@ -67,3 +67,15 @@ def getWordScores(words, letterVecs, makeSorted=True):
 		return {k: v for k, v in sorted(wordScores.items(), key=lambda item: item[1], reverse=True)}
 	else:
 		return wordScores
+
+def getWordProbabilities(words, letterVecs, makeSorted=True):
+	wordProbs = dict.fromkeys(words)
+
+	for word in words:
+		prob = (letterVecs[word[0]][0] * letterVecs[word[1]][1] * letterVecs[word[2]][2] * letterVecs[word[3]][3] * letterVecs[word[4]][4]) / 5
+		wordProbs[word] = prob
+
+	if makeSorted:
+		return {k: v for k, v in sorted(wordProbs.items(), key=lambda item: item[1], reverse=True)}
+	else:
+		return wordProbs
