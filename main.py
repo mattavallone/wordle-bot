@@ -37,6 +37,10 @@ if __name__ == '__main__':
 	allWordsProbs = stats.getWordProbabilities(allWords, allLetters)
 	solWordProbs = stats.getWordProbabilities(solWords, solLetters)
 
+	# Compute word vector magnitudes
+	allWordsMags = stats.getWordMagnitudes(allWords, allLetters)
+	solWordMags = stats.getWordMagnitudes(solWords, solLetters)
+	
 	# Get today's wordle
 	answer, gameId = words.today()
 	
@@ -44,8 +48,8 @@ if __name__ == '__main__':
 	states = []
 	guesses = []
 	for attempt in range(1, 7):
-		guess = player.computeGuess(solWordProbs, attempt, guesses, states)
-		print("Guess is " + guess + ", Score is " + str(solWordProbs[guess]))
+		guess = player.computeGuess(solWordMags, attempt, guesses, states) # using magnitude of the solution set letter vectors
+		print("Guess is " + guess + ", Score is " + str(solWordMags[guess]))
 
 		guesses.append(guess)
 
