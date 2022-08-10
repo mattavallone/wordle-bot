@@ -12,3 +12,30 @@ Winning Percentage: 97.62%
 Avg. Attempts Per Win: 3.899
 
 Avg. Attempts Total: 3.949
+
+## Version 2.0
+### Strategy
+Same strategy as v1.0, except:
+
+* Filtering out previous solution words from the set of possible answers
+* Using the letter vectors to compute the probability for each remaining solution word
+
+### Performance
+Winning Percentage: 97.97%
+
+Avg. Attempts Per Win: 3.875
+
+Avg. Attempts Total: 3.918
+
+## Version 3.0
+### Strategy
+Same strategy as v2.0, except:
+
+* Using the letter vectors to compute the magnitude for each remaining solution word
+
+### Performance
+Winning Percentage: 97.53%
+
+Avg. Attempts Per Win: 3.930
+
+Avg. Attempts Total: 3.981
